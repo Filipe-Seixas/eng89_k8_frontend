@@ -97,3 +97,28 @@ spec:
         ports:
         - containerPort: 80
 ```
+- Let's create a service for our frontend
+```
+  # frontend-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app.kubernetes.io/name: guestbook
+    app.kubernetes.io/component: frontend
+spec:
+  # if your cluster supports it, uncomment the following to automatically create
+  # an external load-balanced IP for the frontend service.
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app.kubernetes.io/name: guestbook
+    app.kubernetes.io/component: frontend
+```
+- Run `kubectl apply -f frontend-service.yml`
+  
+ - http://localhost
+ - https://v1-20.docs.kubernetes.io/docs/tutorials/stateless-application/guestbook/
+  
