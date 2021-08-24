@@ -120,5 +120,5 @@ spec:
 - Run `kubectl apply -f frontend-service.yml`
   
  - http://localhost
- - https://v1-20.docs.kubernetes.io/docs/tutorials/stateless-application/guestbook/
+
   
